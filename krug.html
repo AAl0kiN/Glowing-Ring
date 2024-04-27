@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Krug</title>
+    <style>
+        
+        body{
+        background-color: #050210;
+        }
+
+        .krug {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            right: 100px;
+            bottom: 100px;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #fb5dad, #55fb9f, #b97aff);
+            border-radius: 50%;  
+            animation: rotate 1s infinite linear;
+            filter: drop-shadow(0px 0px 40px linear-gradient); 
+        } 
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .krug::after{
+            content: "";
+            position: absolute;
+            inset:0;
+            background: linear-gradient(45deg, #fb5dad, #55fb9f, #b97aff);
+            border-radius: 50%;  
+            filter: blur(3rem);
+        }
+
+        .krug::after{
+            filter: blur(2.5rem);
+        }
+        
+        .krug1 {
+            content: "";
+            position: absolute;
+            top: 120px;
+            left: 120px;
+            bottom: 100px;
+            right: 100px;
+            width: 260px;
+            height: 260px;
+            background: #050210;
+            border-radius: 50%;
+            transform: scaleZ(100px);
+        }
+
+        .krug1::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            right: 0px;
+            width: 260px;
+            height: 260px;
+            background: #ffffff05;
+            border-radius: 50%;
+            animation: zoom 2s infinite cubic-bezier(0, -0.25, 0.75, 1.5);
+            animation-fill-mode: forwards;
+        }
+
+            @keyframes zoom {
+            0% {
+                transform: scale(0%);
+            }
+            100% {
+                transform: scale(90%);
+            }
+        }
+
+        .krug2 {
+            content: "";
+            position: absolute;
+            top: 120px;
+            left: 120px;
+            bottom: 100px;
+            right: 100px;
+            width: 260px;
+            height: 260px;
+            background: #ffffff05;
+            border-radius: 50%;
+            animation: zoom 2s infinite cubic-bezier(0, -0.25, 0.75, 1.5);
+            animation-fill-mode: forwards;
+            animation-delay: 1s; 
+        }
+
+            @keyframes zoom {
+            0% {
+                transform: scale(0%);
+            }
+            100% {
+                transform: scale(90%);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="krug"></div>
+    <div class="krug1"></div>
+    <div class="krug2"></div>
+</body>
+</html>
